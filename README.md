@@ -1,4 +1,4 @@
-# fdj-exercise-front
+# fdj-exercise
 
 ## Context
 
