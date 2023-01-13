@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core'
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,13 +7,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent {
-  protected id : string = '';
-    
+  @Input() id : number = 0;
+
   constructor(
     private route: ActivatedRoute
   ) { }
-
-  ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id')!;
-  }
 }

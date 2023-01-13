@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { TeamComponent } from './team.component'
 import { ActivatedRoute } from '@angular/router'
 import { of } from 'rxjs'
+import { PlayerComponent } from '../player/player.component'
 
 describe('TeamComponent', () => {
   let component: TeamComponent
@@ -10,7 +11,10 @@ describe('TeamComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TeamComponent],
+      declarations: [
+        TeamComponent,
+        PlayerComponent,
+      ],
       providers: [
         {
           provide: ActivatedRoute,

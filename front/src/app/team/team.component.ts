@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 
 @Component({
-  selector: 'app-team',
+  selector: 'app-teams',
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.css'],
 })
