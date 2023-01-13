@@ -1,19 +1,19 @@
-import { Component, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input } from '@angular/core'
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
-  styleUrls: ['./team.component.css']
+  styleUrls: ['./team.component.css'],
 })
 export class TeamComponent {
-  protected id : string = '';
-    
-  constructor(
-    private route: ActivatedRoute
+  protected id: string = ''
+
+  constructor (
+    private route: ActivatedRoute,
   ) { }
 
-  ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id')!;
+  ngOnInit () {
+    this.id = this.route.snapshot.paramMap.get('id')!
   }
 }
