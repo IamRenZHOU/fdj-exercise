@@ -5,6 +5,8 @@ services:
   mongo:
     image: mongo
     restart: always
+    volumes:
+      - ./docker/database/data/:/data
     ports:
       - "27017:27017"
     environment:
