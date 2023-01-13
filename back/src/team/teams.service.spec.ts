@@ -2,17 +2,17 @@ import { Test, TestingModule } from '@nestjs/testing'
 import { TeamsService } from './teams.service'
 
 describe('TeamsService', () => {
-  let service: TeamsService
+  let teamsService: TeamsService
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [TeamsService],
     }).compile()
 
-    service = module.get<TeamsService>(TeamsService)
+    teamsService = module.get<TeamsService>(TeamsService)
   })
 
   it('should be defined', () => {
-    expect(service).toBeDefined()
+    expect(teamsService).toBeDefined()
   })
 })
