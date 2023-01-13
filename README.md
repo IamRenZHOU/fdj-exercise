@@ -17,7 +17,7 @@ Développement Front Paris Sportifs
 
 ## Techno
 
-* Front Angular 13
+* Front Angular 15
 * Back NestJS
 * Node.js 18
 * MongoDB
