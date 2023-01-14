@@ -12,6 +12,11 @@ export class LeaguesController {
     this.leaguesService = leaguesService
   }
 
+  @Get()
+  async findAll (): Promise<League[]> {
+    return this.leaguesService.find()
+  }
+
   @Get(':slug')
   async find (@Param('slug') slug: string = ''): Promise<League[]> {
     return this.leaguesService.find(slug)

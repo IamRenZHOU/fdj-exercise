@@ -12,25 +12,31 @@ export class TeamListComponent {
 
   protected teams: any[] = []
 
-  protected name = new FormControl('');
+  protected name = new FormControl('')
 
   constructor (private leagueService: LeagueService) {
-    this.name.valueChanges.subscribe((data) => {
-      if (data) {
-        this.showLeague(data)
-      }
-    })
   }
 
   ngOnInit () {
+    this.showLeague()
+
+    this.name.valueChanges.subscribe((data) => {
+      if (data === null) {
+        data = ''
+      }
+
+      this.showLeague(data)
+    })
   }
 
-  showLeague (slug: string) {
+  showLeague (slug: string = '') {
     this.leagueService.getTeamsByLeague(slug)
       .subscribe((data: any) => {
         this.leagues = data
 
-        this.teams = this.leagues.map((league) => league.teams).flat()
+        this.teams = this.leagues
+          .map((league) => league.teams)
+          .flat()
       })
   }
 }

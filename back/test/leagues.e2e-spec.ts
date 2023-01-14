@@ -23,6 +23,13 @@ describe('LeaguesController (e2e)', () => {
     await app.init()
   })
 
+  it('/leagues (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/leagues/')
+      .expect(200)
+      .expect(leaguesService.find())
+  })
+
   it('/leagues?slug (GET)', () => {
     return request(app.getHttpServer())
       .get('/leagues/slug slug')
