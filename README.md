@@ -61,3 +61,7 @@ mongorestore --uri=mongodb://localhost -u root -p example --authenticationDataba
 mongorestore --uri=mongodb://localhost -u root -p example --authenticationDatabase=admin --nsInclude=fjd.leagues /data/leagues.bson
 
 ```
+https://github.com/IamRenZHOU/fdj-exercise/blob/main/Team%20List%20View.png
+![alt text]([https://github.com/IamRenZHOU/fdj-exercise/blob/main/Team%20List%20View.png])
+![alt text]([https://github.com/IamRenZHOU/fdj-exercise/blob/main/Team%20View.png])
+
