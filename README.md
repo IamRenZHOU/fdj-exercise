@@ -48,8 +48,9 @@ Documentation : DAT
 - [ ] Monitoring Status des applications
 
 (Options)
-- [ ] Auto complétion avec Elasticsearch
+- [ ] Script d importe avec des fake données pour créer de volume
 - [ ] Clustering de la base de données
+- [ ] Load balancing avec des tests de chaos monkey
 
 ## Remind
 
@@ -60,6 +61,11 @@ mongorestore --uri=mongodb://localhost -u root -p example --authenticationDataba
 mongorestore --uri=mongodb://localhost -u root -p example --authenticationDatabase=admin --nsInclude=fjd.teams /data/teams.bson
 mongorestore --uri=mongodb://localhost -u root -p example --authenticationDatabase=admin --nsInclude=fjd.leagues /data/leagues.bson
 
+```
+
+```
+cd back && npm start
+cd front && npm run start:dev
 ```
 
 
