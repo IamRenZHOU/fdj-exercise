@@ -36,7 +36,7 @@ Documentation : DAT
 
 (SP2)
 - [x] Recherche par rapport à une league
-- [ ] Gestion de l'erreur
+- [x] Gestion de l'erreur
 - [x] Swagger
 
 (SP3)
