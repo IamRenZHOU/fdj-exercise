@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common'
 import { PlayerComponent } from './player/player.component'
 import { TeamViewComponent } from './team-view.component'
 import { MatGridListModule } from '@angular/material/grid-list'
+import { MatCardModule } from '@angular/material/card'
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { MatGridListModule } from '@angular/material/grid-list'
   imports: [
     CommonModule,
     MatGridListModule,
+    MatCardModule,
   ],
   exports: [
     PlayerComponent,
