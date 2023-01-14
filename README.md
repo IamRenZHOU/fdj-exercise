@@ -42,10 +42,22 @@ Documentation : DAT
 (SP3)
 * Auto complétion
 * PM2 mode production
+* Lazy loading without populating players and teams
 
 (SP4)
 * Monitoring Status des applications
 
 (Options)
 * Auto complétion avec Elasticsearch
-* Clustering de la base de donnée
+* Clustering de la base de données
+
+## Remind
+
+### import mongo data
+```shell
+docker exec -it fdj-exercise-mongo-1 bash
+mongorestore --uri=mongodb://localhost -u root -p example --authenticationDatabase=admin --nsInclude=fjd.players /data/players.bson
+mongorestore --uri=mongodb://localhost -u root -p example --authenticationDatabase=admin --nsInclude=fjd.teams /data/teams.bson
+mongorestore --uri=mongodb://localhost -u root -p example --authenticationDatabase=admin --nsInclude=fjd.leagues /data/leagues.bson
+
+```
