@@ -1,23 +1,31 @@
 <ng-container>
 
-  <div class="search-box">
-    <mat-form-field class="example-form-field">
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let name of filteredOptions | async" [value]="name">
-          {{name}}
-        </mat-option>
-      </mat-autocomplete>
-      <mat-label>Nom de league</mat-label>
-      <input matInput type="text" [formControl]="searchTerm" [matAutocomplete]="auto">
-      <mat-hint *ngIf="leagues.length === 0">Aucun league trouve !</mat-hint>
-      <button *ngIf="searchTerm.value" matSuffix mat-icon-button aria-label="Clear" (click)="searchTerm.reset()">
-        <mat-icon>close</mat-icon>
-      </button>
-      <button matSuffix mat-icon-button>
+  <div class="search-box" [ngStyle]="{display: 'center'}">
+    <div [ngStyle]="{display: 'flex'}">
+
+      <mat-form-field class="example-form-field">
+
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let name of filteredOptions | async" [value]="name">
+            {{name}}
+          </mat-option>
+        </mat-autocomplete>
+
+        <mat-label>Nom de league</mat-label>
+
+        <input matInput type="text" [formControl]="searchTerm" [matAutocomplete]="auto">
+        <mat-hint *ngIf="leagues.length === 0">Aucun league trouve !</mat-hint>
+
+        <button *ngIf="searchTerm.value" matSuffix mat-icon-button aria-label="Clear" (click)="searchTerm.reset()">
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </mat-form-field>
+
+      <button mat-icon-button [disabled]="true">
         <mat-icon>search</mat-icon>
       </button>
-    </mat-form-field>
-
+    </div>
   </div>
 
   <mat-grid-list cols="2" rowHeight="2:1">

@@ -1,4 +1,8 @@
 .search-box {
   margin: 1em auto;
-  width: 10em;
+  width: 20em;
+}
+
+input {
+  min-width: 5em;
 }
