@@ -3,19 +3,20 @@ import { INestApplication } from '@nestjs/common'
 import * as request from 'supertest'
 import { AppModule } from '../src/app.module'
 import { TeamsService } from '../src/services/teams.service'
+import { LeaguesService } from '../src/services/leagues.service'
 
 describe('LeaguesController (e2e)', () => {
   let app: INestApplication
 
-  let teamsService = {
-    findBySlug: () => [{ id: 1 }, { id: 2 }],
+  let leaguesService = {
+    find: () => [{ id: 1 }, { id: 2 }],
   }
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [AppModule],
-    }).overrideProvider(TeamsService)
-      .useValue(teamsService)
+    }).overrideProvider(LeaguesService)
+      .useValue(leaguesService)
       .compile()
 
     app = moduleFixture.createNestApplication()
@@ -24,8 +25,8 @@ describe('LeaguesController (e2e)', () => {
 
   it('/leagues?slug (GET)', () => {
     return request(app.getHttpServer())
-      .get('/leagues?slug=slug slug')
+      .get('/leagues/slug slug')
       .expect(200)
-      .expect(teamsService.findBySlug())
+      .expect(leaguesService.find())
   })
 })
