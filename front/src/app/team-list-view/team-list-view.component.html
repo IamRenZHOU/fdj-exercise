@@ -1,10 +1,7 @@
-<p>team-list works!</p>
-
 <form>
   <input id="name" type="text" placeholder="team's name" [formControl]="name">
 </form>
-
-<p>Value: {{ name.value }}</p>
+<!--<p>Value: {{ name.value }}</p>-->
 
 <div>
   <ng-container *ngFor="let league of leagues ">
@@ -13,5 +10,7 @@
 </div>
 
 <ul *ngFor="let team of teams">
-  <li><a href="/teams/{{team._id}}">{{ team.name }}</a></li>
+  <li>
+    <app-team [team]="team"></app-team>
+  </li>
 </ul>

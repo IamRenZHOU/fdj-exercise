@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
+import { Player } from '../../interfaces/player.interface'
 
 @Component({
   selector: 'app-player',
@@ -7,7 +8,7 @@ import { ActivatedRoute } from '@angular/router'
   styleUrls: ['./player.component.css'],
 })
 export class PlayerComponent {
-  @Input() id: number = 0
+  @Input() player: Player | any = {}
 
   constructor () { }
 }

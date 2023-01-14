@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { TeamComponent } from './team.component'
+import { TeamViewComponent } from './team-view.component'
 import { ActivatedRoute } from '@angular/router'
 import { of } from 'rxjs'
-import { PlayerComponent } from '../player/player.component'
+import { PlayerComponent } from './player/player.component'
 
 describe('TeamComponent', () => {
-  let component: TeamComponent
-  let fixture: ComponentFixture<TeamComponent>
+  let component: TeamViewComponent
+  let fixture: ComponentFixture<TeamViewComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        TeamComponent,
+        TeamViewComponent,
         PlayerComponent,
       ],
       providers: [
@@ -30,7 +30,7 @@ describe('TeamComponent', () => {
     })
       .compileComponents()
 
-    fixture = TestBed.createComponent(TeamComponent)
+    fixture = TestBed.createComponent(TeamViewComponent)
     component = fixture.componentInstance
     fixture.detectChanges()
   })

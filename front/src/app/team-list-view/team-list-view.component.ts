@@ -1,21 +1,22 @@
 import { Component } from '@angular/core'
-import { LeagueService } from '../league.service'
+import { LeagueService } from '../services/league.service'
 import { FormControl } from '@angular/forms'
 
 @Component({
-  selector: 'app-teams-list',
-  templateUrl: './team-list.component.html',
-  styleUrls: ['./team-list.component.css'],
+  selector: 'app-teams-list-view',
+  templateUrl: './team-list-view.component.html',
+  styleUrls: ['./team-list-view.component.css'],
 })
-export class TeamListComponent {
+export class TeamListViewComponent {
   protected leagues: any[] = []
 
   protected teams: any[] = []
 
   protected name = new FormControl('')
 
-  constructor (private leagueService: LeagueService) {
-  }
+  constructor (
+    private leagueService: LeagueService,
+  ) { }
 
   ngOnInit () {
     this.showLeague()

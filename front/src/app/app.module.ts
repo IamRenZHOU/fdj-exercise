@@ -3,24 +3,26 @@ import { BrowserModule } from '@angular/platform-browser'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { PlayerComponent } from './player/player.component'
-import { TeamListComponent } from './team-list/team-list.component'
-import { TeamComponent } from './team/team.component'
+import { PlayerComponent } from './team-view/player/player.component'
+import { TeamListViewComponent } from './team-list-view/team-list-view.component'
+import { TeamViewComponent } from './team-view/team-view.component'
 import { HttpClientModule } from '@angular/common/http'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
+import { TeamComponent } from './team-list-view/team/team.component'
+import { TeamViewModule } from './team-view/team-view.module'
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayerComponent,
+    TeamListViewComponent,
     TeamComponent,
-    TeamListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    TeamViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]
