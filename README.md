@@ -62,6 +62,6 @@ mongorestore --uri=mongodb://localhost -u root -p example --authenticationDataba
 
 ```
 https://github.com/IamRenZHOU/fdj-exercise/blob/main/Team%20List%20View.png
-![alt text]([https://github.com/IamRenZHOU/fdj-exercise/blob/main/Team%20List%20View.png])
-![alt text]([https://github.com/IamRenZHOU/fdj-exercise/blob/main/Team%20View.png])
+![alt text]([[https://github.com/IamRenZHOU/fdj-exercise/blob/main/Team%20List%20View.png]](https://github.com/IamRenZHOU/fdj-exercise/blob/main/Team%20List%20View.png))
+![alt text]([[https://github.com/IamRenZHOU/fdj-exercise/blob/main/Team%20View.png](https://github.com/IamRenZHOU/fdj-exercise/blob/main/Team%20View.png)])
 
