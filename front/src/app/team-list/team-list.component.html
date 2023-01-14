@@ -1,14 +1,17 @@
 <p>team-list works!</p>
 
-<form action="">
-  <input type="text" placeholder="team's name">
-  <button>go</button>
+<form>
+  <input id="name" type="text" placeholder="team's name" [formControl]="name">
 </form>
 
-<ul>
-    <li><a href="/teams/1">team 1</a></li>
-    <li><a href="/teams/2">team 2</a></li>
-    <li><a href="/teams/3">team 3</a></li>
-    <li><a href="/teams/4">team 4</a></li>
-    <li><a href="/teams/5">team 5</a></li>
+<p>Value: {{ name.value }}</p>
+
+<div>
+  <ng-container *ngFor="let league of leagues ">
+    <h1>{{ league.name }}</h1>
+  </ng-container>
+</div>
+
+<ul *ngFor="let team of teams">
+  <li><a href="/teams/{{team._id}}">{{ team.name }}</a></li>
 </ul>
