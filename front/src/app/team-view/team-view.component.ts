@@ -11,7 +11,7 @@ import { Team } from '../interfaces/team.interface'
 export class TeamViewComponent {
   protected id: string = ''
 
-  protected team: Team | any = null
+  protected team: Team = { _id: 'id', players: [], name: 'name', thumbnail: 'thumbnail' }
 
   constructor (
     private route: ActivatedRoute,
@@ -25,9 +25,8 @@ export class TeamViewComponent {
 
   showTeam (id: string) {
     this.teamService.getTeamsById(id)
-      .subscribe((data) => {
+      .subscribe((data: Team | any) => {
         this.team = data
-        console.log(this.team)
       })
   }
 }

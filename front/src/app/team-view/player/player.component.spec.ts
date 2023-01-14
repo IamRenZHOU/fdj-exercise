@@ -17,7 +17,13 @@ describe('PlayerComponent', () => {
           useValue: {
             snapshot: {
               paramMap: {
-                get: () => of({ id: 123 }),
+                get: () => of({
+                  _id: 123,
+                  signin: {
+                    amount: 123,
+                    currency: 'currency',
+                  },
+                }),
               },
             },
           },

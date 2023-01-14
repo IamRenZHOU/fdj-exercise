@@ -4,8 +4,12 @@ import { TeamViewComponent } from './team-view.component'
 import { ActivatedRoute } from '@angular/router'
 import { of } from 'rxjs'
 import { PlayerComponent } from './player/player.component'
+import { TeamService } from '../services/team.service'
+import { CommonModule } from '@angular/common'
+import { BrowserModule } from '@angular/platform-browser'
+import { HttpClientModule } from '@angular/common/http'
 
-describe('TeamComponent', () => {
+describe('TeamViewComponent', () => {
   let component: TeamViewComponent
   let fixture: ComponentFixture<TeamViewComponent>
 
@@ -14,6 +18,11 @@ describe('TeamComponent', () => {
       declarations: [
         TeamViewComponent,
         PlayerComponent,
+      ],
+      imports: [
+        CommonModule,
+        BrowserModule,
+        HttpClientModule,
       ],
       providers: [
         {
@@ -24,6 +33,12 @@ describe('TeamComponent', () => {
                 get: () => of({ id: 123 }),
               },
             },
+          },
+        },
+        {
+          provide: TeamService,
+          useValue: {
+            getTeamsById: () => of({ id: 'id' }),
           },
         },
       ],

@@ -1,43 +1,65 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { LeagueService } from '../services/league.service'
 import { FormControl } from '@angular/forms'
+import { League } from '../interfaces/league.interface'
+import { Team } from '../interfaces/team.interface'
+import { debounceTime, map, mergeMap, Observable, of } from 'rxjs'
 
 @Component({
   selector: 'app-teams-list-view',
   templateUrl: './team-list-view.component.html',
   styleUrls: ['./team-list-view.component.css'],
 })
-export class TeamListViewComponent {
-  protected leagues: any[] = []
+export class TeamListViewComponent implements OnInit {
+  protected leagues: League[] = []
+  protected teams: Team[] = []
 
-  protected teams: any[] = []
-
-  protected name = new FormControl('')
+  protected leaguesName: string[] = ['hello', 'Hello1', 'world']
+  protected searchTerm = new FormControl('')
+  protected filteredOptions: Observable<string[]> = of([])
 
   constructor (
     private leagueService: LeagueService,
   ) { }
 
-  ngOnInit () {
-    this.showLeague()
+  async ngOnInit () {
+    await this.showLeague()
 
-    this.name.valueChanges.subscribe((data) => {
-      if (data === null) {
-        data = ''
-      }
+    this.filteredOptions = this.searchTerm.valueChanges
+      .pipe(
+        debounceTime(200),
+        mergeMap(async (term: string | any) => {
+          console.log('show league', this.leaguesName)
 
-      this.showLeague(data)
-    })
+          await this.showLeague(term)
+
+          return term
+        }),
+        map((term: string | any) => {
+          if (!term) {
+            term = ''
+          }
+
+          console.log('show league name', this.leaguesName, term)
+
+          return this.leaguesName.filter((name) => name.toLowerCase().includes(term.toLowerCase()))
+        }),
+      )
   }
 
-  showLeague (slug: string = '') {
-    this.leagueService.getTeamsByLeague(slug)
-      .subscribe((data: any) => {
+  async showLeague (slug: string = '') {
+    return new Promise((resolve) => this.leagueService.getTeamsByLeague(slug)
+      .subscribe((data: League[] | any) => {
         this.leagues = data
 
+        this.leaguesName = this.leagues.map((league: League) => league.name).flat()
+
         this.teams = this.leagues
-          .map((league) => league.teams)
+          .map((league: League) => league.teams)
           .flat()
-      })
+
+        resolve(data)
+      }),
+    )
   }
 }

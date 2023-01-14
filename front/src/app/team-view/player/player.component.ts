@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core'
-import { ActivatedRoute } from '@angular/router'
 import { Player } from '../../interfaces/player.interface'
 
 @Component({
@@ -8,7 +7,16 @@ import { Player } from '../../interfaces/player.interface'
   styleUrls: ['./player.component.css'],
 })
 export class PlayerComponent {
-  @Input() player: Player | any = {}
+  @Input() player: Player = {
+    _id: 'id',
+    born: new Date(),
+    name: 'name',
+    thumbnail: 'thumbnail',
+    position: 'position',
+    signin: {
+      currency: 'currency', amount: 123,
+    },
+  }
 
   constructor () { }
 }

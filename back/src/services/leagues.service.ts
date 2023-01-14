@@ -12,7 +12,7 @@ export class LeaguesService {
   ) {}
 
   async find (slug: string = ''): Promise<League[]> {
-    return this.leagueModel.find({ name: { $regex: slug } })
+    return this.leagueModel.find({ name: { $regex: new RegExp(`${slug.toLowerCase()}`, 'i') } })
       .populate('teams')
       .exec()
   }

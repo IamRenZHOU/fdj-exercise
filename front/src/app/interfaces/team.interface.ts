@@ -1,8 +1,8 @@
-import * as Player from './player.interface'
+import { Player } from './player.interface'
 
 export class Team {
-  _id: string = '';
-  name: string = '';
-  thumbnail: string = '';
-  players: any[] = [];
+  _id: string = ''
+  name: string = ''
+  thumbnail: string = ''
+  players: Player[] = []
 }
