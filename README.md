@@ -42,6 +42,7 @@ Documentation : DAT
 (SP3)
 - [x] Auto complétion
 - [ ] PM2 mode production
+- [ ] Lazy loading module
 - [ ] Lazy loading without populating players and teams
 
 (SP4)
