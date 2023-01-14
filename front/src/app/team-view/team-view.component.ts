@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { TeamService } from '../services/team.service'
 import { Team } from '../interfaces/team.interface'
@@ -8,7 +8,7 @@ import { Team } from '../interfaces/team.interface'
   templateUrl: './team-view.component.html',
   styleUrls: ['./team-view.component.css'],
 })
-export class TeamViewComponent {
+export class TeamViewComponent implements OnInit {
   protected id: string = ''
 
   protected team: Team = { _id: 'id', players: [], name: 'name', thumbnail: 'thumbnail' }

@@ -1,5 +1,5 @@
-<img src="{{player.thumbnail}}" alt="{{ player.name }}">
-<p>Lastname: player {{ player.name }}</p>
-<p>Price: player {{ player.signin.amount }} {{ player.signin.currency }}</p>
-<p>Position: player {{ player.position }}</p>
-<p>BirthDate: player {{ player.born | date:'fullDate'}}</p>
+<img id="{{player.name}}}" src="{{player.thumbnail}}" alt="{{ player.name }}">
+<p>Name: {{ player.name }}</p>
+<p>Price: {{ player.signin.amount }} {{ player.signin.currency }}</p>
+<p>Position: {{ player.position }}</p>
+<p>BirthDate: {{ player.born | date:'fullDate'}}</p>

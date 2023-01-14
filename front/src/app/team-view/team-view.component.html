@@ -1,7 +1,5 @@
-<ul>
-  <ng-container *ngFor="let player of team.players">
-    <li>
-      <app-player [player]=player></app-player>
-    </li>
-  </ng-container>
-</ul>
+<mat-grid-list cols="1">
+  <mat-grid-tile *ngFor="let player of team.players">
+    <app-player [player]=player></app-player>
+  </mat-grid-tile>
+</mat-grid-list>

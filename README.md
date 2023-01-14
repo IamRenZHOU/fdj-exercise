@@ -31,25 +31,25 @@ Développement Front Paris Sportifs
 Documentation : DAT
 
 (MVP)
-* Front + Back + BDD pour affichage de la liste
-* Affichage de joueurs
+- [x] Front + Back + BDD pour affichage de la liste
+- [x] Affichage de joueurs
 
 (SP2)
-* Recherche par rapport à une league
-* Gestion de l'erreur
-* Swagger
+- [x] Recherche par rapport à une league
+- [ ] Gestion de l'erreur
+- [x] Swagger
 
 (SP3)
-* Auto complétion
-* PM2 mode production
-* Lazy loading without populating players and teams
+- [x] Auto complétion
+- [ ] PM2 mode production
+- [ ] Lazy loading without populating players and teams
 
 (SP4)
-* Monitoring Status des applications
+- [ ] Monitoring Status des applications
 
 (Options)
-* Auto complétion avec Elasticsearch
-* Clustering de la base de données
+- [ ] Auto complétion avec Elasticsearch
+- [ ] Clustering de la base de données
 
 ## Remind
 

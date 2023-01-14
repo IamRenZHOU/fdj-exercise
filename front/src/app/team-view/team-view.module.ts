@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
 import { PlayerComponent } from './player/player.component'
 import { TeamViewComponent } from './team-view.component'
-
-
+import { MatGridListModule } from '@angular/material/grid-list'
 
 @NgModule({
   declarations: [
@@ -11,11 +10,12 @@ import { TeamViewComponent } from './team-view.component'
     TeamViewComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatGridListModule,
   ],
   exports: [
     PlayerComponent,
     TeamViewComponent,
   ],
 })
-export class TeamViewModule { }
+export class TeamViewModule {}

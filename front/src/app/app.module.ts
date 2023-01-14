@@ -7,6 +7,9 @@ import { TeamListViewModule } from './team-list-view/team-list-view.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HttpClientModule } from '@angular/common/http'
 import { BrowserModule } from '@angular/platform-browser'
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatButtonModule } from '@angular/material/button'
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { BrowserModule } from '@angular/platform-browser'
     TeamListViewModule,
     BrowserModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
