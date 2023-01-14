@@ -1,16 +1,32 @@
-<form>
-  <input id="name" type="text" placeholder="team's name" [formControl]="name">
-</form>
+<ng-container>
+  <form>
+    <input id="name"
+           type="text"
+           placeholder="team's name"
+           aria-label="Number"
+           matInput
+           [formControl]="name"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of leagues" [value]="option.name">
+        {{option.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </form>
+
+  <ul *ngFor="let team of teams">
+    <li>
+      <app-team [team]="team"></app-team>
+    </li>
+  </ul>
+</ng-container>
+
+
 <!--<p>Value: {{ name.value }}</p>-->
 
-<div>
-  <ng-container *ngFor="let league of leagues ">
-    <h1>{{ league.name }}</h1>
-  </ng-container>
-</div>
+<!--<div>-->
+<!--  <ng-container *ngFor="let league of leagues ">-->
+<!--    <h1>{{ league.name }}</h1>-->
+<!--  </ng-container>-->
+<!--</div>-->
 
-<ul *ngFor="let team of teams">
-  <li>
-    <app-team [team]="team"></app-team>
-  </li>
-</ul>

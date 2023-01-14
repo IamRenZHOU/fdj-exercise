@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
+import { MatAutocompleteModule } from '@angular/material/autocomplete'
+import { MatInputModule } from '@angular/material/input'
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { RouterModule } from '@angular/router'
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatAutocompleteModule,
     RouterModule,
+    MatInputModule,
   ],
   exports: [
     TeamComponent,
