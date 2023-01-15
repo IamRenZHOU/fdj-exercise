@@ -11,10 +11,10 @@
           </mat-option>
         </mat-autocomplete>
 
-        <mat-label>Nom de league</mat-label>
+        <mat-label>League's name</mat-label>
 
         <input matInput type="text" [formControl]="searchTerm" [matAutocomplete]="auto">
-        <mat-hint *ngIf="leagues.length === 0">Aucun league trouve !</mat-hint>
+        <mat-hint *ngIf="leagues.length === 0">No team found !</mat-hint>
 
         <button *ngIf="searchTerm.value" matSuffix mat-icon-button aria-label="Clear" (click)="searchTerm.reset()">
           <mat-icon>close</mat-icon>
