@@ -29,8 +29,6 @@ export class TeamListViewComponent implements OnInit {
       .pipe(
         debounceTime(200),
         mergeMap(async (term: string | any) => {
-          console.log('show league', this.leaguesName)
-
           await this.showLeague(term)
 
           return term
@@ -39,8 +37,6 @@ export class TeamListViewComponent implements OnInit {
           if (!term) {
             term = ''
           }
-
-          console.log('show league name', this.leaguesName, term)
 
           return this.leaguesName.filter((name) => name.toLowerCase().includes(term.toLowerCase()))
         }),

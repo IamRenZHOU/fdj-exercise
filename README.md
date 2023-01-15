@@ -20,11 +20,17 @@ Développement Front Paris Sportifs
 * Front Angular 15
 * Back NestJS
 * Node.js 18
-* MongoDB
+* MongoDB/Cluster
 * Docker/Docker-compose
 * Load Balancing ...
 * Test performance : JMeter
 * PM2 Process manager
+
+## Demo
+![Image](https://github.com/IamRenZHOU/fdj-exercise/blob/main/resources/Team%20List%20View.png?raw=true)
+![Image](https://github.com/IamRenZHOU/fdj-exercise/blob/main/resources/Team%20View.png?raw=true)
+![Image](https://github.com/IamRenZHOU/fdj-exercise/blob/main/resources/Autocomplete.png?raw=true)
+![Image](https://github.com/IamRenZHOU/fdj-exercise/blob/main/resources/Without%20Team.png?raw=true)
 
 ## Roadmap
 
@@ -36,20 +42,23 @@ Documentation : DAT
 
 (SP2)
 - [x] Recherche par rapport à une league
-- [ ] Gestion de l'erreur
+- [x] Gestion de l'erreur
 - [x] Swagger
 
 (SP3)
 - [x] Auto complétion
 - [ ] PM2 mode production
+- [ ] Lazy loading module
 - [ ] Lazy loading without populating players and teams
 
 (SP4)
 - [ ] Monitoring Status des applications
 
 (Options)
-- [ ] Auto complétion avec Elasticsearch
-- [ ] Clustering de la base de données
+- [ ] Script d importe avec des fake données pour créer de volume
+- [x] Clustering de la base de données
+- [ ] Load balancing 
+- [ ] Chaos Monkey tests
 
 ## Remind
 
@@ -62,5 +71,11 @@ mongorestore --uri=mongodb://localhost -u root -p example --authenticationDataba
 
 ```
 
-### mongo cluster
+### Start project
+```
+cd back && npm start
+cd front && npm run start:dev
+```
+
+### Mongo cluster
 https://github.com/minhhungit/mongodb-cluster-docker-compose
