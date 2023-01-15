@@ -17,6 +17,8 @@ Développement Frontend + Backend pour un exercice de Francaise des jeux
 
 ## Techno
 
+![Image](https://github.com/IamRenZHOU/fdj-exercise/blob/main/resources/architecture.drawio.png?raw=true)
+
 * Front Angular 15
 * Back NestJS
 * Node.js 18
