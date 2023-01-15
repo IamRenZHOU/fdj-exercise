@@ -61,3 +61,6 @@ mongorestore --uri=mongodb://localhost -u root -p example --authenticationDataba
 mongorestore --uri=mongodb://localhost -u root -p example --authenticationDatabase=admin --nsInclude=fjd.leagues /data/leagues.bson
 
 ```
+
+### mongo cluster
+https://github.com/minhhungit/mongodb-cluster-docker-compose
