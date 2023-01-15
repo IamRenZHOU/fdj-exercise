@@ -2,7 +2,7 @@
 
 ## Context
 
-Développement Front Paris Sportifs
+Développement Frontend + Backend pour un exercice de Francaise des jeux
 
 1. Champs de recherche permettant de rechercher une league
 2. Proposer de l’auto-complétion dans le champ de recherche
